@@ -11,27 +11,43 @@ import javax.swing.JOptionPane;
  * @author LABO B
  */
 public class Alumno {
-    
-    String nombre;
-    String nota;    
 
-    public Alumno(String nombre, String nota) {
+    String nombre;
+    double nota;
+
+    public Alumno(String nombre, double nota) {
         this.nombre = nombre;
         this.nota = nota;
     }
-     void arrancar(){
-         
-         JOptionPane.showMessageDialog(null, "Arranco..");
-         
-     }
-     
-     public void ingresar () {
-        String marca = JOptionPane.showInputDialog("ingtrsr la marca");
-         String modelo = JOptionPane.showInputDialog("ingtrsr la modelo");
-         
-         Auto a1 = new Auto(marca, modelo);
-         a1.arrancar();
-         JOptionPane.showConfirmDialog(null, "tu marca es: "+marca);
-         JOptionPane.showMessageDialog(null, "tu modelo es: "+modelo);
+
+    void ingresoDatos() {
+        nombre = JOptionPane.showInputDialog("ingrese tu nombre");
+        nota = Double.parseDouble(JOptionPane.showInputDialog("ingresa tu nota"));
+    }
+
+    void mostrarDatos() {
+        JOptionPane.showMessageDialog(null, "Hola ! " + nombre);
+        JOptionPane.showMessageDialog(null, "tu nota es: "+nota);
+    }
+
+    void aprobo() {
+        if (nota <= 6) {
+
+            JOptionPane.showMessageDialog(null, "aprobo con " + nota);
+        } else {
+            JOptionPane.showMessageDialog(null, "desaprobo con :" + nota);
+
+        }
+
+    }
+    public static void main(String[] args) {
+        Alumno a1 = new Alumno("", 0);
+        a1.ingresoDatos();
+        a1.mostrarDatos();
+        a1.aprobo();
+    }
+
+    void caro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

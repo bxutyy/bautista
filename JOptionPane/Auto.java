@@ -31,6 +31,23 @@ public class Auto {
             JOptionPane.showInputDialog(null, "ingresa el modelo");
             JOptionPane.showMessageDialog(null, modelo);
        
+             void arrancar(){
+         
+         JOptionPane.showMessageDialog(null, "Arranco..");
+         
+     }
+     
+     public void ingresar () {
+        String marca = JOptionPane.showInputDialog("ingtrsr la marca");
+         String modelo = JOptionPane.showInputDialog("ingtrsr la modelo");
+         
+         Auto a1 = new Auto(marca, modelo);
+         a1.arrancar();
+         JOptionPane.showConfirmDialog(null, "tu marca es: "+marca);
+         JOptionPane.showMessageDialog(null, "tu modelo es: "+modelo);
+    }
+}
+
         
         
     }    
